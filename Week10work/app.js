@@ -241,7 +241,7 @@ db.collection('teams').where('country', '==', 'Spain')
         docs.forEach((d) => {
             //console.log('ARRAY CONTAINS ANY')
             console.log(d.data().teamname)
-            document.querySelector('#activity').innerHTML += `<p>1. ${d.data().teamname}</p>`
+            document.querySelector('#activity').innerHTML += `<p>${d.data().teamname}</p>`
         })
     })
 // NOT WORKING ^ got correct answer using console.log tho its just about the displaying. 
@@ -256,7 +256,7 @@ db.collection('teams').where('country', '==', 'Spain').where('city', '==', 'Madr
         docs.forEach((d) => {
             //console.log('ARRAY CONTAINS ANY')
             console.log(d.data().teamname)
-            document.querySelector('#activity').innerHTML += `2. <p>${d.data().teamname}</p>`
+            document.querySelector('#activity').innerHTML += `<p>${d.data().teamname}</p>`
         })
     })
 
@@ -270,7 +270,7 @@ db.collection('teams').where('city', '==', 'Not applicable') // im guesssing thi
         docs.forEach((d) => {
             //console.log('ARRAY CONTAINS ANY')
             console.log(d.data().teamname)
-            document.querySelector('#activity').innerHTML += `<p>3. ${d.data().teamname}</p>`
+            document.querySelector('#activity').innerHTML += `<p>${d.data().teamname}</p>`
         })
     })
 
@@ -283,7 +283,7 @@ db.collection('teams').where('country', '!=', 'Spain')
         document.querySelector('#activity').innerHTML += "#4\n"
         docs.forEach((d) => {
             console.log(d.data().teamname)
-            document.querySelector('#activity').innerHTML += `4. <p>${d.data().teamname}</p>`
+            document.querySelector('#activity').innerHTML += `<p>${d.data().teamname}</p>`
         })
     })
 
@@ -297,7 +297,7 @@ db.collection('teams').where('country', 'not-in', ['Spain', 'England'])
         docs.forEach((d) => {
             //console.log('ARRAY CONTAINS ANY')
             console.log(d.data().teamname)
-            document.querySelector('#activity').innerHTML += `<p>5. ${d.data().teamname}</p>`
+            document.querySelector('#activity').innerHTML += `<p>${d.data().teamname}</p>`
         })
     })
 // 6.	Show all teams in Spain with more than 700M fans
@@ -309,7 +309,7 @@ db.collection('teams').where('country', '==', 'Spain').where('millionsoffans', '
         document.querySelector('#activity').innerHTML += "#6\n"
         docs.forEach((d) => {
             console.log(d.data().teamname)
-            document.querySelector('#activity').innerHTML += `6. <p>${d.data().teamname}</p>`
+            document.querySelector('#activity').innerHTML += `<p>${d.data().teamname}</p>`
         })
     })
 
@@ -322,7 +322,7 @@ db.collection('teams').where('millionsoffans', '>=', 500).where('millionsoffans'
         document.querySelector('#activity').innerHTML += "#7\n"
         docs.forEach((d) => {
             console.log(d.data().teamname)
-            document.querySelector('#activity').innerHTML += `7. <p>${d.data().teamname}</p>`
+            document.querySelector('#activity').innerHTML += `<p>${d.data().teamname}</p>`
         })
     })
 // 8.	Show all teams where Ronaldo is a top scorer 
@@ -334,7 +334,7 @@ db.collection('teams').where('topscorers', 'array-contains', "Ronaldo")
         document.querySelector('#activity').innerHTML += "#8\n"
         docs.forEach((d) => {
             console.log(d.data().teamname)
-            document.querySelector('#activity').innerHTML += `8. <p>${d.data().teamname}</p>`
+            document.querySelector('#activity').innerHTML += `<p>${d.data().teamname}</p>`
         })
     })
 
@@ -347,7 +347,7 @@ db.collection('teams').where('topscorers', 'array-contains-any', ["Ronaldo", "Ma
         document.querySelector('#activity').innerHTML += "#9\n"
         docs.forEach((d) => {
             console.log(d.data().teamname)
-            document.querySelector('#activity').innerHTML += `9. <p>${d.data().teamname}</p>`
+            document.querySelector('#activity').innerHTML += `<p>${d.data().teamname}</p>`
         })
     })
 
@@ -391,13 +391,13 @@ db.collection('teams').doc("4nOuCnneX0RRVbAUNajJ").update({
 // Barcelona: Red (home). Gold (away)
 
 db.collection('teams').doc("9x568FxdqJ6CfIeybfXp").update({
-    colors: {
+    color: {
         home: "White",
         away: "Black"
     }
 })
 db.collection('teams').doc("4nOuCnneX0RRVbAUNajJ").update({
-    colors: {
+    color: {
         home: "Red",
         away: "Gold"
     }
@@ -407,10 +407,10 @@ db.collection('teams').doc("4nOuCnneX0RRVbAUNajJ").update({
 // c.	Real Madrid: Purple jersey color for away matches
 // d.	Barcelona: Pink jersey color for away matches
 db.collection('teams').doc("9x568FxdqJ6CfIeybfXp").update({
-    'colors.away': 'Purple'
+    'color.away': 'Purple'
 })
 db.collection('teams').doc("4nOuCnneX0RRVbAUNajJ").update({
-    'colors.away': 'Pink'
+    'color.away': 'Pink'
 })
 
 
