@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- bulma CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+
+  <!-- font awesome cdn -->
+  <script src="https://kit.fontawesome.com/8a80b728dc.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="people" class="has-background-lightgray p-4 m-3 has-background-grey-lighter">
+    <h1 class="title">Add a person to the DB</h1>
+    <p>Name: <input type="text" id="name" /></p>
+    <p>age: <input type="text" id="age" /></p>
+    <p>
+      Favourite color:
+      <select id="favcolor">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+      </select>
+    </p>
+
+    <!-- add people to the DB -->
+    <button id="submit">Submit</button>
+    <!-- must attach click event to the submit button -->
+  </div>
+
+  <!-- all people from the database -->
+  <div id="all_people" class="has-background-lightgray p-4 m-3 has-background-grey-lighter">
+    <h1 class="title">All people stored in the database</h1>
+  </div>
+
+  <div id="activity">
+    <h2><b>Firestore Query Activity</b></h2>
+
+  </div>
+
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+  <script>
+    // TODO
+    // Copy **only** your firebaseConfig from Google Firebae and add it below
+
+    // Your web app's Firebase configuration
+    // Your web app's Firebase configuration
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyAYxMSgCI20Tox8EEet3enpl7bJH6f3h9E",
+
+      authDomain: "is424week9practice.firebaseapp.com",
+
+      projectId: "is424week9practice",
+
+      storageBucket: "is424week9practice.appspot.com",
+
+      messagingSenderId: "113483285893",
+
+      appId: "1:113483285893:web:2492388ed0423a461230ec"
+
+    };
+    // end paste. same project as last week: https://console.firebase.google.com/u/0/project/is424week9practice/settings/general/web:MDA5NGY2YjYtYWE3OC00OTUwLWI3NTMtY2YwMmVlMzFkZjU1
+
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // define authentication variable
+    let auth = firebase.auth();
+    let db = firebase.firestore();
+
+    // define a storage reference
+    let ref = firebase.storage().ref();
+  </script>
+  <!-- make sure to add your own js file as the last line in index.html file -->
+  <script src="app.js"></script>
+</body>
+
+</html>
